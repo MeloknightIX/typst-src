@@ -30,6 +30,8 @@
   )
 }
 
+#let leading = 0.65em
+
 #let template(body) = {
   // document
   set page(
@@ -41,7 +43,7 @@
 
   // page breaking
   show par: it => block(breakable: false, it)
-  show list: it => block(breakable: false, it)
+  show list: it => block(above: leading, below: leading, breakable: false, it)
   show heading: it => block(sticky: true, it)
 
   // line breaking
@@ -51,7 +53,7 @@
   set text(font: "Catamaran")
   set par(
     justify: true,
-    leading: 0.65em,
+    leading: leading,
     spacing: 1.2em,
     linebreaks: "optimized",
   )
